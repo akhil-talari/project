@@ -24,10 +24,10 @@ public class VehicleController {
         return service.findOne(empId);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public Vehicle create(@RequestBody Vehicle vehicle){
-        return service.create(vehicle);
-    }
+//    @RequestMapping(method = RequestMethod.POST)
+//    public Vehicle create(@RequestBody Vehicle vehicle){
+//        return service.create(vehicle);
+//    }
 
     @CrossOrigin(origins = "http://mocker.ennate.academy")
     @RequestMapping(method = RequestMethod.PUT)
