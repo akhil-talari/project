@@ -32,6 +32,7 @@ public class VehicleController {
     @CrossOrigin(origins = "http://mocker.ennate.academy")
     @RequestMapping(method = RequestMethod.PUT)
     public List<Vehicle> update(@RequestBody List<Vehicle> vehicles){
+
         return service.update(vehicles);
     }
 
