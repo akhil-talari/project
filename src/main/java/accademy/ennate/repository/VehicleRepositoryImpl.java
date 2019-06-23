@@ -1,5 +1,6 @@
 package accademy.ennate.repository;
 
+import accademy.ennate.entity.Readings;
 import accademy.ennate.entity.Vehicle;
 import org.springframework.stereotype.Component;
 
@@ -17,9 +18,10 @@ public class VehicleRepositoryImpl implements VehicleRepository {
     private EntityManager em;
 
     @Override
-    public void findAll() {
-        //Query query = em.createQuery("SELECT emp FROM Employee emp ORDER BY emp.email DESC ");
-       // return query.getResultList();
+    public List<Vehicle>  findAll() {
+        Query query = em.createQuery("SELECT vch FROM Vehicle vch ORDER BY vch.vin DESC ");
+        List<Vehicle> readingsList = query.getResultList();
+        return readingsList;
     }
 
     @Override
@@ -53,6 +55,7 @@ public class VehicleRepositoryImpl implements VehicleRepository {
             Vehicle v = it.next();
             em.merge(v);
         }
+
          return vch;
 
     }
@@ -61,5 +64,7 @@ public class VehicleRepositoryImpl implements VehicleRepository {
     public void delete(Vehicle emp) {
         em.remove(emp);
     }
+
+
 
 }

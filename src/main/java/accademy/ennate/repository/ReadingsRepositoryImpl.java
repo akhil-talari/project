@@ -1,6 +1,7 @@
 package accademy.ennate.repository;
 
 import accademy.ennate.entity.Readings;
+import accademy.ennate.service.AlertService;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
